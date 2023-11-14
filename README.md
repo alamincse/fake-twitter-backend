@@ -46,7 +46,7 @@
 ```
 
 
-## Server
+## Serve
 ```
 1. php artisan key:generate [If app does not have key in .env file]
 2. php artisan serve
