@@ -12,7 +12,7 @@
 ## Installation
 
 ``` 
-1. git clone https://gitlab.com/cseal.amin.09/fake-twitter.git
+1. git clone https://github.com/alamincse/fake-twitter-backend.git
 2. make .env file with proper database connection
 3. composer install
 ```
