@@ -28,7 +28,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Total Admins</h5>
                                     <p class="card-text">
-                                        <strong>{{ totalInfo.totalAdmin }}</strong>
+                                        <strong>{{ totalInfo.totalAdmin ?? 0 }}</strong>
                                     </p>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Total Users</h5>
                                     <p class="card-text">
-                                        <strong>{{ totalInfo.totalUser }}</strong>
+                                        <strong>{{ totalInfo.totalUser ?? 0 }}</strong>
                                     </p>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Total Tweets</h5>
                                     <p class="card-text">
-                                        <strong>{{ totalInfo.totalTweet }}</strong>
+                                        <strong>{{ totalInfo.totalTweet ?? 0 }}</strong>
                                     </p>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Total Likes</h5>
                                     <p class="card-text">
-                                        <strong>{{ totalInfo.totalLike }}</strong>
+                                        <strong>{{ totalInfo.totalLike ?? 0 }}</strong>
                                     </p>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                         <div class="col-md-12">
                             <div class="table-responsive">
                                 <h5>Register User List</h5>
-                                <table class="table table-striped  table-hover">
+                                <table v-if="participantInfo" class="table table-striped  table-hover">
                                     <thead>
                                         <th>Name</th>
                                         <th>Email</th>
@@ -83,7 +83,7 @@
                                         <th>Join Date</th>
                                     </thead>
                                     <tbody>
-                                        <tr v-if="participantInfo" v-for="(item, index) in participantInfo" :key="index">
+                                        <tr v-for="(item, index) in participantInfo" :key="index">
                                             <td>{{ item.name }}</td>
                                             <td>{{ item.email }}</td>
                                             <td>{{ item.tweets_count }}</td>
@@ -94,6 +94,10 @@
                                         </tr>
                                     </tbody>
                                 </table>
+
+                                <div class="alert alert-primary" role="alert">
+                                    You don't have user!
+                                </div>
                             </div>
                         </div>
                     </div>
