@@ -95,7 +95,7 @@
                                     </tbody>
                                 </table>
 
-                                <div class="alert alert-primary" role="alert">
+                                <div v-else class="alert alert-primary" role="alert">
                                     You don't have user!
                                 </div>
                             </div>
